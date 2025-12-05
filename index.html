@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Conversor de Moedas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <div class="logo">💱</div>
+            <div>
+                <h1>Conversor de Moedas</h1>
+                <small>Taxas ao vivo</small>
+            </div>
+        </div>
+
+        <nav class="header-actions">
+            <button id="theme-toggle" title="Alternar tema"><i class="fa-solid fa-moon"></i></button>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="panel">
+            <div class="panel-left">
+                <h2>Converta rápido</h2>
+                <p class="muted">Insira o valor, escolha as moedas e clique em Converter. Você pode trocar as moedas com
+                    o botão ↔︎.</p>
+
+                <div class="form-row">
+                    <label for="amount">Valor</label>
+                    <input id="amount" type="number" placeholder="0.00" value="100" min="0" step="any" />
+                </div>
+
+                <div class="form-row selects">
+                    <div class="select-wrapper">
+                        <label for="from-currency">De</label>
+                        <select id="from-currency"></select>
+                    </div>
+
+                    <button id="swap-btn" class="swap-btn" title="Trocar moedas">↔︎</button>
+
+                    <div class="select-wrapper">
+                        <label for="to-currency">Para</label>
+                        <select id="to-currency"></select>
+                    </div>
+                </div>
+
+                <div class="form-row actions">
+                    <button id="convert-btn" class="primary">Converter</button>
+                    <button id="clear-btn" class="ghost">Limpar</button>
+                </div>
+
+                <div class="quick-currencies">
+                    <span>Rápido:</span>
+                    <div class="chips" id="popular-chips"></div>
+                </div>
+
+                <div class="status" id="status"></div>
+            </div>
+
+            <div class="panel-right">
+                <div class="result-card">
+                    <div class="result-head">
+                        <h3>Resultado</h3>
+                        <button id="copy-btn" title="Copiar resultado"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <div class="result-body">
+                        <div class="big-result" id="result">—</div>
+                        <div class="rate-info" id="rate-info">Taxa: — • Atualizado: —</div>
+                    </div>
+
+                    <div class="history">
+                        <small>Últimas conversões</small>
+                        <ul id="history-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <small>&copy; 2025 Gregory Klaus Todos os direitos reservados.</small>
+    </footer>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
